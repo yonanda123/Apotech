@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:apotech/login/login_screen.dart';
+import 'package:apotech/welcome/welcome_screen.dart';
 
 class WalkthroughScreen extends StatefulWidget {
   @override
@@ -12,8 +12,8 @@ class _WalkthroughScreenState extends State<WalkthroughScreen> {
 
   final List<String> titles = [
     'View and buy Medicine online',
-    'Explore Features',
-    'Get Started',
+    'Online medical & Healthcare',
+    'Get Delivery on time',
   ];
 
   final List<String> descriptions = [
@@ -64,7 +64,7 @@ class _WalkthroughScreenState extends State<WalkthroughScreen> {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => LoginScreen(),
+                          builder: (context) => WelcomeScreen(),
                         ),
                       );
                     },
@@ -106,7 +106,7 @@ class _WalkthroughScreenState extends State<WalkthroughScreen> {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => LoginScreen(),
+                      builder: (context) => WelcomeScreen(),
                     ),
                   );
                 }
