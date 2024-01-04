@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:apotech/register/register_screen.dart';
-import 'package:apotech/home/home_screen.dart';
-import 'package:apotech/welcome/welcome_screen.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height;
@@ -21,12 +18,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             'assets/icons/arrow_back.png',
           ),
           onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => WelcomeScreen(),
-              ),
-            );
+            Navigator.pop(context);
           },
         ),
       ),
@@ -36,7 +28,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 }
 
-class LoginScreen extends StatelessWidget {
+class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -111,7 +103,9 @@ class LoginScreen extends StatelessWidget {
                 Positioned(
                   right: 0,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      // Add your logic for forgot password here
+                    },
                     child: Text(
                       'Forgot?',
                       style: TextStyle(
@@ -130,12 +124,7 @@ class LoginScreen extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => HomeScreen(),
-                      ),
-                    );
+                    // Add your logic for email signup here
                   },
                   style: ElevatedButton.styleFrom(
                     fixedSize: const Size(311, 50),
@@ -168,12 +157,7 @@ class LoginScreen extends StatelessWidget {
                   alignment: Alignment.bottomCenter,
                   child: TextButton(
                     onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => RegisterScreen(),
-                        ),
-                      );
+                      // Add your logic for navigating to the sign-up screen here
                     },
                     child: Text(
                       'Don’t have an account? Sign Up',

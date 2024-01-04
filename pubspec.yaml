@@ -67,6 +67,9 @@ flutter:
     - assets/images/MaskGroup2.png
     - assets/icons/facebook.png
     - assets/icons/google-hangouts.png
+    - assets/icons/arrow_back.png
+    - assets/icons/person.png
+    - assets/icons/lock.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -99,6 +102,9 @@ flutter:
     - family: OverpassMedium
       fonts:
         - asset: assets/fonts/Overpass-Medium.ttf
+    - family: arial
+      fonts:
+        - asset: assets/fonts/ARIAL.ttf
   #   - family: Overpass-Regular
   #     fonts:
   #       - asset: src/fonts/Overpass-Regular.ttf
