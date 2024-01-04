@@ -55,7 +55,7 @@ class LoginScreen extends StatelessWidget {
                 fontFamily: 'OverpassExtraBold',
               ),
             ),
-            SizedBox(height: 20.0),
+            SizedBox(height: 24.0),
             TextFormField(
               decoration: InputDecoration(
                 prefixIcon: Image.asset(
@@ -80,7 +80,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 15.0),
+            SizedBox(height: 16.0),
             Stack(
               children: [
                 TextFormField(

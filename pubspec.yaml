@@ -70,6 +70,8 @@ flutter:
     - assets/icons/arrow_back.png
     - assets/icons/person.png
     - assets/icons/lock.png
+    - assets/icons/view.png
+    - assets/icons/hide.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
