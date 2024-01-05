@@ -83,6 +83,7 @@ flutter:
     - assets/images/product4.png
     - assets/images/checkout1.png
     - assets/images/checkout2.png
+    - assets/images/foto.png
     - assets/icons/facebook.png
     - assets/icons/google-hangouts.png
     - assets/icons/arrow_back.png
@@ -111,6 +112,12 @@ flutter:
     - assets/icons/paypal.png
     - assets/icons/google.png
     - assets/icons/apple.png
+    - assets/icons/profile1.png
+    - assets/icons/profile2.png
+    - assets/icons/profile3.png
+    - assets/icons/profile4.png
+    - assets/icons/profile5.png
+    - assets/icons/profile6.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -146,6 +153,9 @@ flutter:
     - family: arial
       fonts:
         - asset: assets/fonts/ARIAL.ttf
+    - family: HankenGroteskBold
+      fonts:
+        - asset: assets/fonts/HankenGrotesk-Bold.ttf
     #   - family: Overpass-Regular
     #     fonts:
     #       - asset: src/fonts/Overpass-Regular.ttf

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:apotech/category_listing/category_listing_screen.dart';
+import 'package:apotech/profile/profile_screen.dart';
 
 class Indicator extends StatelessWidget {
   final int index;
@@ -24,8 +25,14 @@ class Indicator extends StatelessWidget {
 
 enum MenuIndex { Home, Notification, Create, Cart, Profile }
 
-class HomeScreen extends StatelessWidget {
-  int _currentIndex = 0;
+class HomeScreen extends StatefulWidget {
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  MenuIndex _currentIndex = MenuIndex.Profile;
+
   final List<Map<String, dynamic>> categoriesData = [
     {'imagePath': 'assets/icons/Dental.png', 'title': 'Dental'},
     {'imagePath': 'assets/icons/wellness.png', 'title': 'Wellness'},
@@ -33,6 +40,7 @@ class HomeScreen extends StatelessWidget {
     {'imagePath': 'assets/icons/Eye Care.png', 'title': 'Eye Care'},
     {'imagePath': 'assets/icons/Skin & Hair.png', 'title': 'Skin & Hair'},
   ];
+
   final List<Map<String, dynamic>> productData = [
     {
       'title': 'Accu-check Active Test Strip',
@@ -47,17 +55,20 @@ class HomeScreen extends StatelessWidget {
       'rating': '4.2'
     },
   ];
+
   final List<Map<String, dynamic>> brandData = [
     {'imagePath': 'assets/images/Himallaya.png', 'title': 'Himalaya Wellness'},
     {'imagePath': 'assets/images/Accu.png', 'title': 'Accu-Chek'},
     {'imagePath': 'assets/images/VLCC.png', 'title': 'Vlcc'},
     {'imagePath': 'assets/images/Protinex.png', 'title': 'Protinex'},
   ];
+
   final List<String> carouselImages = [
     'assets/images/carousel.png',
     'assets/images/carousel.png',
     'assets/images/carousel.png',
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -536,28 +547,36 @@ class HomeScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         backgroundColor: Color(0xffffffff),
-        currentIndex: _currentIndex,
+        currentIndex: _currentIndex.index,
         onTap: (index) {
           // Handle button tap
-          switch (index) {
+          setState(() {
+            _currentIndex = MenuIndex.values[index];
+          });
+
+          switch (_currentIndex) {
             case MenuIndex.Home:
-              // Handle Home button tap
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomeScreen()),
+              );
               break;
             case MenuIndex.Notification:
-              // Handle Notification button tap
+              // Handle Notification tab
               break;
             case MenuIndex.Create:
-              // Handle Create button tap
+              // Handle Create tab
               break;
             case MenuIndex.Cart:
-              // Handle Schedule button tap
+              // Handle Cart tab
               break;
             case MenuIndex.Profile:
-              // Handle Profile button tap
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfileScreen()),
+              );
               break;
           }
-
-          _currentIndex = index;
         },
         items: [
           BottomNavigationBarItem(
