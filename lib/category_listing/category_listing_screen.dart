@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:apotech/home/home_screen.dart';
+import 'package:apotech/product_detail/product_detail_screen.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height;
@@ -73,28 +74,37 @@ class _CategoryListingState extends State<CategoryListing> {
     {
       'title': 'Accu-check Active Test Strip',
       'price': 'Rp 112.000',
-      'imagePath': 'assets/images/product1.png',
+      'imagePath': 'assets/images/product3.png',
       'rating': '4.2',
+      'isSale': true,
+      'discountPercentage': null,
     },
     {
       'title': 'Omron HEM-8712 BP Monitor',
       'price': 'Rp 150,000',
-      'imagePath': 'assets/images/product2.png',
+      'imagePath': 'assets/images/product1.png',
       'rating': '4.2',
+      'isSale': false,
+      'discountPercentage': 15,
     },
     {
       'title': 'Accu-check Active Test Strip',
       'price': 'Rp 112,000',
-      'imagePath': 'assets/images/product3.png',
+      'imagePath': 'assets/images/product2.png',
       'rating': '4.2',
+      'isSale': false,
+      'discountPercentage': null,
     },
     {
       'title': 'Omron HEM-8712 BP Monitor',
       'price': 'Rp 150,000',
       'imagePath': 'assets/images/product4.png',
       'rating': '4.2',
+      'isSale': false,
+      'discountPercentage': null,
     },
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -209,95 +219,176 @@ class _CategoryListingState extends State<CategoryListing> {
                   ),
                   itemCount: productData.length,
                   itemBuilder: (context, index) {
-                    return Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xffffffff),
-                        borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image.asset(
-                            productData[index]['imagePath'],
-                            width: double.infinity,
-                            height: 154,
-                            fit: BoxFit.cover,
+                    bool isSale = productData[index]['isSale'] ?? false;
+                    bool hasDiscount =
+                        productData[index]['discountPercentage'] != null;
+
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ProductDetailScreen(
+                                product: productData[index]),
                           ),
-                          SizedBox(height: 16.0),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 16),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        );
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Color(0xffffffff),
+                          borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                        ),
+                        child: Stack(
+                          children: [
+                            Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  productData[index]['title'],
-                                  style: TextStyle(
-                                    color: Color(0xff090F47),
-                                    fontSize: 13,
-                                    fontFamily: 'OverpassLight',
+                                Container(
+                                  width: 157,
+                                  height: 154,
+                                  color: Color(0xffF5F7FA),
+                                  child: ClipRRect(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(20)),
+                                    child: Image.asset(
+                                      productData[index]['imagePath'],
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
-                                SizedBox(height: 8.0),
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      productData[index]['price'],
-                                      style: TextStyle(
-                                        color: Color(0xff090F47),
-                                        fontSize: 14,
-                                        fontFamily: 'OverpassExtraBold',
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 50,
-                                      height: 24,
-                                      decoration: BoxDecoration(
-                                        color: Color(0xffFFC000),
-                                        borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(8.0),
-                                          bottomLeft: Radius.circular(8.0),
+                                SizedBox(height: 16.0),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 16),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        productData[index]['title'],
+                                        style: TextStyle(
+                                          color: Color(0xff090F47),
+                                          fontSize: 13,
+                                          fontFamily: 'OverpassLight',
                                         ),
                                       ),
-                                      child: Row(
+                                      SizedBox(height: 8.0),
+                                      Row(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
-                                          SizedBox(
-                                            width: 4,
-                                          ),
-                                          Icon(
-                                            Icons.star,
-                                            color: Colors.white,
-                                            size: 18,
-                                          ),
-                                          SizedBox(
-                                            width: 2,
-                                          ),
                                           Text(
-                                            productData[index]['rating'],
+                                            productData[index]['price'],
                                             style: TextStyle(
-                                              color: Color(0xffffffff),
-                                              fontSize: 13,
+                                              color: Color(0xff090F47),
+                                              fontSize: 14,
                                               fontFamily: 'OverpassExtraBold',
+                                            ),
+                                          ),
+                                          Container(
+                                            width: 50,
+                                            height: 24,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xffFFC000),
+                                              borderRadius: BorderRadius.only(
+                                                topLeft: Radius.circular(8.0),
+                                                bottomLeft:
+                                                    Radius.circular(8.0),
+                                              ),
+                                            ),
+                                            child: Row(
+                                              children: [
+                                                SizedBox(
+                                                  width: 4,
+                                                ),
+                                                Icon(
+                                                  Icons.star,
+                                                  color: Colors.white,
+                                                  size: 18,
+                                                ),
+                                                SizedBox(
+                                                  width: 2,
+                                                ),
+                                                Text(
+                                                  productData[index]['rating'],
+                                                  style: TextStyle(
+                                                    color: Color(0xffffffff),
+                                                    fontSize: 13,
+                                                    fontFamily:
+                                                        'OverpassExtraBold',
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ],
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),
-                          ),
-                        ],
+                            if (isSale && !hasDiscount)
+                              _buildSaleLabel()
+                            else if (!isSale && hasDiscount)
+                              _buildDiscountLabel(
+                                productData[index]['discountPercentage'],
+                              ),
+                          ],
+                        ),
                       ),
                     );
                   },
                 ),
               ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSaleLabel() {
+    return Positioned(
+      top: 8.0,
+      left: 8.0,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+        decoration: BoxDecoration(
+          color: Color(0xffFF5A5A),
+          borderRadius: BorderRadius.all(Radius.circular(4.0)),
+        ),
+        child: Text(
+          'SALE',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 12.0,
+            fontFamily: 'OverpassLight',
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDiscountLabel(int? discountPercentage) {
+    return Positioned(
+      top: 8.0,
+      left: 8.0,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+        decoration: BoxDecoration(
+          color: Color(0xffFFC618),
+          borderRadius: BorderRadius.all(Radius.circular(4.0)),
+        ),
+        child: Text(
+          '$discountPercentage% OFF',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 12.0,
+            fontFamily: 'OverpassLight',
           ),
         ),
       ),

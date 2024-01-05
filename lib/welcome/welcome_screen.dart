@@ -105,9 +105,7 @@ class WelcomeScreen extends StatelessWidget {
 
             SizedBox(height: 12.0),
             ElevatedButton(
-              onPressed: () {
-                // Add your logic for email signup here
-              },
+              onPressed: () {},
               style: ElevatedButton.styleFrom(
                 fixedSize: const Size(311, 50),
                 primary: Color(0xffffffff),

@@ -345,9 +345,9 @@ class HomeScreen extends StatelessWidget {
                                   Image.asset(
                                     productData[index]['imagePath'],
                                     width: 178,
-                                    height: 154, // Adjust the height as needed
+                                    height: 154, 
                                     fit: BoxFit
-                                        .cover, // Make the image cover the entire width
+                                        .cover, 
                                   ),
                                   SizedBox(height: 16.0),
                                   Padding(
@@ -454,7 +454,7 @@ class HomeScreen extends StatelessWidget {
                             padding: const EdgeInsets.only(
                                 top: 4, bottom: 4, right: 4),
                             child: Container(
-                              width: 100.0, // Set a fixed width
+                              width: 100.0,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [

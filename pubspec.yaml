@@ -100,6 +100,8 @@ flutter:
     - assets/icons/schedule-black.png
     - assets/icons/profile.png
     - assets/icons/create.png
+    - assets/icons/notification24.png
+    - assets/icons/cart24.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
