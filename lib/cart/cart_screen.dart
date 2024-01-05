@@ -562,7 +562,7 @@ class _CartScreenState extends State<CartScreen> {
                   child: Padding(
                     padding: const EdgeInsets.only(top: 4),
                     child: Text(
-                      'GO TO CART',
+                      'Place Order @ Rp 185.000',
                       style: TextStyle(
                         color: Color(0xffffffff),
                         fontSize: 16.0,

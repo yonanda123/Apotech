@@ -106,6 +106,11 @@ flutter:
     - assets/icons/cart24.png
     - assets/icons/close.png
     - assets/icons/tag.png
+    - assets/icons/edit.png
+    - assets/icons/credit.png
+    - assets/icons/paypal.png
+    - assets/icons/google.png
+    - assets/icons/apple.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -146,7 +151,7 @@ flutter:
     #       - asset: src/fonts/Overpass-Regular.ttf
     - family: OverpassSemiBold
       fonts:
-        - asset: src/fonts/Overpass-SemiBold.ttf
+        - asset: assets/fonts/Overpass-SemiBold.ttf
   #   - family: Overpass-Thin
   #     fonts:
   #       - asset: src/fonts/Overpass-Thin.ttf
