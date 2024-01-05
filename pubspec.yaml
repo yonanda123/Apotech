@@ -66,6 +66,14 @@ flutter:
     - assets/images/Group1209.png
     - assets/images/MaskGroup2.png
     - assets/images/succes.png
+    - assets/images/profile.png
+    - assets/images/carousel.png
+    - assets/images/pills.png
+    - assets/images/tablet.png
+    - assets/images/Himallaya.png
+    - assets/images/Accu.png
+    - assets/images/VLCC.png
+    - assets/images/Protinex.png
     - assets/icons/facebook.png
     - assets/icons/google-hangouts.png
     - assets/icons/arrow_back.png
@@ -73,6 +81,18 @@ flutter:
     - assets/icons/lock.png
     - assets/icons/view.png
     - assets/icons/hide.png
+    - assets/icons/notification.png
+    - assets/icons/schedule.png
+    - assets/icons/Dental.png
+    - assets/icons/wellness.png
+    - assets/icons/Homeo.png
+    - assets/icons/Eye Care.png
+    - assets/icons/Skin & Hair.png
+    - assets/icons/Home.png
+    - assets/icons/notification-black.png
+    - assets/icons/schedule-black.png
+    - assets/icons/profile.png
+    - assets/icons/create.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
