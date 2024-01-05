@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:apotech/category_listing/category_listing_screen.dart';
 
 class Indicator extends StatelessWidget {
   final int index;
@@ -21,7 +22,7 @@ class Indicator extends StatelessWidget {
   }
 }
 
-enum MenuIndex { Home, Notification, Create, Schedule, Profile }
+enum MenuIndex { Home, Notification, Create, Cart, Profile }
 
 class HomeScreen extends StatelessWidget {
   int _currentIndex = 0;
@@ -300,7 +301,14 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CategoryListing(),
+                              ),
+                            );
+                          },
                           child: Text(
                             'More',
                             style: TextStyle(
@@ -542,7 +550,7 @@ class HomeScreen extends StatelessWidget {
             case MenuIndex.Create:
               // Handle Create button tap
               break;
-            case MenuIndex.Schedule:
+            case MenuIndex.Cart:
               // Handle Schedule button tap
               break;
             case MenuIndex.Profile:

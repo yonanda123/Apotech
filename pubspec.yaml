@@ -74,6 +74,13 @@ flutter:
     - assets/images/Accu.png
     - assets/images/VLCC.png
     - assets/images/Protinex.png
+    - assets/images/Sugar.png
+    - assets/images/Juices.png
+    - assets/images/vitamins.png
+    - assets/images/product1.png
+    - assets/images/product2.png
+    - assets/images/product3.png
+    - assets/images/product4.png
     - assets/icons/facebook.png
     - assets/icons/google-hangouts.png
     - assets/icons/arrow_back.png
